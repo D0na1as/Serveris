@@ -11,7 +11,8 @@ public class Database {
     private BasicDataSource dataSource;
 
     public Database(String databaseName) {
-//        dataSource = new BasicDataSource();
+
+        dataSource = new BasicDataSource();
 //        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 //        dataSource.setUsername("root");
 //        dataSource.setPassword("");
