@@ -16,13 +16,13 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-//        Database item = new Database("heroku_47fd00a889de629");
-//        PassCoding code = new PassCoding();
-//        JOpenCageGeocoder jOpenCageGeocoder = new JOpenCageGeocoder("d3e798fb71524178afd780d87f98c2bc");
-
-        Database item = new Database("dbaze");
+        Database item = new Database("heroku_47fd00a889de629");
         PassCoding code = new PassCoding();
         JOpenCageGeocoder jOpenCageGeocoder = new JOpenCageGeocoder("d3e798fb71524178afd780d87f98c2bc");
+
+//        Database item = new Database("dbaze");
+//        PassCoding code = new PassCoding();
+//        JOpenCageGeocoder jOpenCageGeocoder = new JOpenCageGeocoder("d3e798fb71524178afd780d87f98c2bc");
 
         Spark.port(80);
 
