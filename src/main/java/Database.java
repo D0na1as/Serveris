@@ -11,17 +11,17 @@ public class Database {
     private BasicDataSource dataSource;
 
     public Database(String databaseName) {
-        dataSource = new BasicDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUsername("root");
-        dataSource.setPassword("");
-        dataSource.setUrl("jdbc:mysql://localhost.net:3306/" + databaseName + "?useUnicode=yes&characterEncoding=UTF-8");
-        dataSource.setValidationQuery("SELECT 1");
+//        dataSource = new BasicDataSource();
 //        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-//        dataSource.setUsername("b394f371a160e8");
-//        dataSource.setPassword("6b2c6686");
-//        dataSource.setUrl("jdbc:mysql://eu-cdbr-west-03.cleardb.net:3306/" + databaseName + "?useUnicode=yes&characterEncoding=UTF-8");
+//        dataSource.setUsername("root");
+//        dataSource.setPassword("");
+//        dataSource.setUrl("jdbc:mysql://localhost.net:3306/" + databaseName + "?useUnicode=yes&characterEncoding=UTF-8");
 //        dataSource.setValidationQuery("SELECT 1");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUsername("b394f371a160e8");
+        dataSource.setPassword("6b2c6686");
+        dataSource.setUrl("jdbc:mysql://eu-cdbr-west-03.cleardb.net:3306/" + databaseName + "?useUnicode=yes&characterEncoding=UTF-8");
+        dataSource.setValidationQuery("SELECT 1");
     }
 
     public void registerRecipient(Recipient recipient) {
