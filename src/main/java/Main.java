@@ -16,7 +16,11 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        Database item = new Database("heroku_47fd00a889de629");
+//        Database item = new Database("heroku_47fd00a889de629");
+//        PassCoding code = new PassCoding();
+//        JOpenCageGeocoder jOpenCageGeocoder = new JOpenCageGeocoder("d3e798fb71524178afd780d87f98c2bc");
+
+        Database item = new Database("dbaze");
         PassCoding code = new PassCoding();
         JOpenCageGeocoder jOpenCageGeocoder = new JOpenCageGeocoder("d3e798fb71524178afd780d87f98c2bc");
 
@@ -214,9 +218,12 @@ public class Main {
                 JSONObject json = new JSONObject();
                 try {
                     json.put("latitude", responseLocation.getFirstPosition().getLat());
+                    System.out.println("latitude: " + responseLocation.getFirstPosition().getLat());
                     json.put("longitude", responseLocation.getFirstPosition().getLng());
+                    System.out.println("longitude" + responseLocation.getFirstPosition().getLng());
                     return json;
                 } catch (NullPointerException e) {
+                    System.out.println("Location null");
                     e.printStackTrace();
                     return null;
                 }
@@ -278,5 +285,20 @@ public class Main {
                 }
             }
         });
+        Spark.post("/delete", new Route() {
+            @Override
+            public Object handle(Request request, Response response) throws Exception {
+                int id = Integer.parseInt(request.queryParams("id"));
+                JSONObject json = new JSONObject();
+                try {
+                    item.deleteRecipient(id) ;
+                    return "SUCCESS";
+                } catch (NullPointerException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+        });
     }
+
 }
