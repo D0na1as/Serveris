@@ -31,6 +31,7 @@ public class Main {
             public JSONArray handle(Request request, Response response) throws Exception {
                 List<Recipient> nodes = item.getNodes();
                 JSONArray array = new JSONArray();
+                System.out.println("Prisijungta");
                 if (nodes != null) {
                     for (Recipient node : nodes) {
 
