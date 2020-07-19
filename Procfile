@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* Serveris
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.serveris.main
